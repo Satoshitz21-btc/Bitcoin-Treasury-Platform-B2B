@@ -1,0 +1,54 @@
+Ini bukan whitepaper crypto, tapi digital treasury prospectus
+Cocok untuk:
+•	Board of Directors
+•	Institutional partners
+•	Auditors
+•	Regulators
+API : Prospectus Summary
+GET /api/prospectus/summary
+{
+  "entity": "PT Bitcoin Treasury Global",
+  "treasuryObjective": "Preserve capital & hedge inflation",
+  "assetPolicy": {
+    "btcAllocationTarget": "60–75%",
+    "rebalancePolicy": "Annual review"
+  },
+  "custody": "Institutional multi-signature cold storage",
+  "riskDisclosure": [
+    "Market volatility",
+    "Regulatory uncertainty",
+    "Technology risk"
+  ]
+}
+
+
+app/api/prospectus/summary/route.ts
+export async function GET() {
+  return Response.json({
+    entity: "PT Bitcoin Treasury Global",
+    treasuryObjective: "Preserve capital & hedge inflation",
+    assetPolicy: {
+      btcAllocationTarget: "60–75%",
+      rebalancePolicy: "Annual review"
+    },
+    custody: "Institutional multi-signature cold storage",
+    riskDisclosure: [
+      "Market volatility",
+      "Regulatory uncertainty",
+      "Technology risk"
+    ]
+  });
+}
+API : Prospectus performance disclosure
+GET /api/prospectus/performance
+{
+  "historicalPerformance": {
+    "btcCAGR": "42%",
+    "fiatInflationAvg": "6.2%",
+    "relativeOutperformance": "+35%"
+  },
+  "stressScenarios": [
+    "BTC -50% → Treasury impact -32%",
+    "BTC +100% → Treasury impact +68%"
+  ]
+}
