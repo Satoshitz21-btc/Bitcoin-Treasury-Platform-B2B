@@ -1,0 +1,203 @@
+POSTMAN STRUCTURE (PRODUCTION-READY)
+
+Bitcoin Treasury Platform (Prod)
+├── Auth
+├── Treasury
+├── Wallets
+├── Transactions
+├── Performance
+├── Prospectus
+├── Compliance
+└── Integrations
+Base URL
+https://api.yourdomain.com
+Auth
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+________________________________________
+1. AUTH MODULE
+Login
+POST /auth/login
+{
+  "email": "cfo@institution.com",
+  "password": "********"
+}
+Response
+{
+  "accessToken": "jwt-token",
+  "role": "CFO"
+}
+________________________________________
+2. TREASURY MODULE
+Treasury Overview
+GET /treasury/overview
+Response
+{
+  "btcHoldings": 312.45,
+  "averageCost": 42350,
+  "marketValueUSD": 19600000,
+  "allocation": {
+    "btc": 68,
+    "fiat": 32
+  }
+}
+________________________________________
+Treasury Policy
+POST /treasury/policy
+{
+  "btcAllocationTarget": "60-75%",
+  "reviewFrequency": "Annual",
+  "maxDrawdownTolerance": "-45%"
+}
+________________________________________
+3. WALLET MODULE (INSTITUTIONAL)
+List Wallets
+GET /wallets
+{
+  "wallets": [
+    {
+      "type": "Cold Storage",
+      "policy": "3-of-5 multisig",
+      "balanceBTC": 280.12
+    }
+  ]
+}
+________________________________________
+Create Wallet
+POST /wallets/create
+{
+  "type": "Cold",
+  "multisig": {
+    "m": 3,
+    "n": 5
+  }
+}
+________________________________________
+4. TRANSACTION MODULE (NON-TRADING)
+Initiate Transfer
+POST /transactions/send
+{
+  "toAddress": "bc1qexample",
+  "amountBTC": 2.5,
+  "purpose": "Treasury rebalancing"
+}
+Response
+{
+  "txId": "btc_tx_hash",
+  "status": "PENDING_APPROVAL"
+}
+________________________________________
+Approve Transaction
+POST /transactions/approve
+{
+  "txId": "btc_tx_hash"
+}
+________________________________________
+Transaction History
+GET /transactions/history
+________________________________________
+5. PERFORMANCE MODULE (CORE)
+Performance Overview
+GET /performance/overview
+{
+  "period": "YTD",
+  "unrealizedPnL": {
+    "usd": 6420000,
+    "percent": 48.6
+  },
+  "btcVsFiatBenchmark": "+31%",
+  "maxDrawdown": "-38%"
+}
+________________________________________
+Performance Timeline
+GET /performance/timeline
+{
+  "monthly": [
+    { "month": "Jan", "valueUSD": 14200000 },
+    { "month": "Feb", "valueUSD": 15800000 }
+  ]
+}
+________________________________________
+Strategy Metrics
+GET /performance/strategy
+{
+  "strategy": "Long-term Bitcoin Treasury",
+  "timeHorizon": "5-10 years",
+  "inflationHedgeScore": 8.9,
+  "custodyModel": "Cold multisig"
+}
+________________________________________
+6. PROSPECTUS MODULE (INSTITUTIONAL)
+Prospectus Summary
+GET /prospectus/summary
+{
+  "entity": "PT Bitcoin Treasury Global",
+  "objective": "Capital preservation & inflation hedge",
+  "btcAllocationTarget": "60–75%",
+  "custody": "Institutional cold multisig"
+}
+________________________________________
+Prospectus Performance Disclosure
+GET /prospectus/performance
+{
+  "btcCAGR": "42%",
+  "relativeOutperformance": "+35%",
+  "stressScenarios": [
+    "BTC -50% → Treasury -32%"
+  ]
+}
+________________________________________
+Generate Board / Investor Report
+POST /prospectus/report
+{
+  "audience": "Board",
+  "period": "FY2025",
+  "format": "PDF"
+}
+________________________________________
+7. COMPLIANCE MODULE
+Audit Logs
+GET /compliance/audit-logs
+{
+  "logs": [
+    {
+      "action": "TX_APPROVAL",
+      "user": "CFO",
+      "timestamp": "2026-02-06T10:12:00Z"
+    }
+  ]
+}
+________________________________________
+
+8. INTEGRATION MODULE (ERP / BANK)
+Treasury Balance API
+GET /integrations/balance
+{
+  "btc": 312.45,
+  "usdValue": 19600000
+}
+________________________________________
+POSTMAN COLLECTION METADATA (IMPORT READY)
+{
+  "info": {
+    "name": "Bitcoin Treasury Platform - Production",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  }
+}
+________________________________________
+PRODUCTION POSITIONING (IMPORTANT)
+Postman ini menunjukkan platform Anda adalah:
+- Treasury system (NOT exchange)
+- Board & regulator friendly
+- Audit-first & compliance-first
+- Comparable to public company BTC disclosures
+
+Sangat cocok untuk:
+•	Bank partner
+•	Institutional investor
+•	Auditor
+•	Regulator
+•	Enterprise client due diligence
+
+
+
