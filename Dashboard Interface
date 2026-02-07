@@ -1,0 +1,24 @@
+/app/dashboard/performance/page.tsx
+export default function PerformanceDashboard() {
+  return (
+    <div>
+      <h1>Bitcoin Treasury Performance</h1>
+      <p>Total BTC Holdings: 312.45 BTC</p>
+      <p>Unrealized PnL: +48.6%</p>
+      <p>Strategy: Long-term Treasury Reserve</p>
+    </div>
+  );
+}
+6. Swagger – API Documentation (Updated)
+{
+  "/api/performance/overview": {
+    "get": {
+      "summary": "Institutional treasury performance overview"
+    }
+  },
+  "/api/prospectus/summary": {
+    "get": {
+      "summary": "Institutional treasury prospectus"
+    }
+  }
+}
