@@ -1,0 +1,18 @@
+API: Generate Report
+POST /api/prospectus/report
+{
+  "format": "PDF",
+  "audience": "Board of Directors",
+  "period": "FY 2026"
+}
+export async function POST(req: Request) {
+  const body = await req.json();
+
+  return Response.json({
+    reportId: "RPT-2026-BTC-001",
+    status: "GENERATED",
+    audience: body.audience
+  });
+}
+
+
