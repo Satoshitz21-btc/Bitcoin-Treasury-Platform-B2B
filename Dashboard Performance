@@ -4,3 +4,49 @@ Tujuan (Institusional)
 o	Capital preservation
 o	Inflation hedge
 o	Balance sheet strategy
+API Performace overview :
+
+GET /api/performance/overview
+Response ( Investor Grade )
+{
+  "period": "YTD",
+  "btcHoldings": 312.45,
+  "averageCost": 42350,
+  "currentPrice": 62800,
+  "marketValueUSD": 19600000,
+  "unrealizedPnL": {
+    "usd": 6420000,
+    "percent": 48.6
+  },
+  "volatility": "High",
+  "drawdownMax": "-38%",
+  "btcVsFiatBenchmark": "+31%"
+}
+app/api/performance/overview/route.ts
+export async function GET() {
+  return Response.json({
+    period: "YTD",
+    btcHoldings: 312.45,
+    averageCost: 42350,
+    currentPrice: 62800,
+    marketValueUSD: 19600000,
+    unrealizedPnL: {
+      usd: 6420000,
+      percent: 48.6
+    },
+    volatility: "High",
+    drawdownMax: "-38%",
+    btcVsFiatBenchmark: "+31%"
+  });
+}
+API: Performance Timeline
+GET /api/performance/timeline
+export async function GET() {
+  return Response.json({
+    monthly: [
+      { month: "Jan", valueUSD: 14200000 },
+      { month: "Feb", valueUSD: 15800000 },
+      { month: "Mar", valueUSD: 19600000 }
+    ]
+  });
+}
