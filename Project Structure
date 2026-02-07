@@ -1,0 +1,23 @@
+bitcoin-treasury-platform/
+├── app/
+│   ├── api/
+│   │   ├── auth/
+│   │   ├── treasury/
+│   │   ├── wallets/
+│   │   ├── transactions/
+│   │   ├── performance/        ← NEW
+│   │   ├── prospectus/         ← NEW
+│   │   ├── analytics/
+│   │   └── compliance/
+│   ├── dashboard/
+│   │   ├── overview/
+│   │   ├── performance/
+│   │   └── prospectus/
+├── lib/
+│   ├── bitcoin/
+│   ├── performance/
+│   ├── prospectus/
+│   ├── risk/
+│   └── auth/
+├── swagger/
+└── README.md
