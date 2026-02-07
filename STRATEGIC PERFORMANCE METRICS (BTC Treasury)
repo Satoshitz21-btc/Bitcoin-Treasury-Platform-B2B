@@ -1,0 +1,19 @@
+API: Risk & Strategy Metrics
+GET /api/performance/strategy
+{
+  "strategy": "Long-term Bitcoin Treasury",
+  "timeHorizon": "5–10 years",
+  "inflationHedgeScore": 8.9,
+  "liquidityRisk": "Medium",
+  "counterpartyRisk": "Low",
+  "custodyModel": "Multi-sig + Cold Storage"
+}
+export async function GET() {
+  return Response.json({
+    strategy: "Long-term Bitcoin Treasury",
+    timeHorizon: "5–10 years",
+    inflationHedgeScore: 8.9,
+    liquidityRisk: "Medium",
+    counterpartyRisk: "Low",
+    custodyModel: "Multi-sig + Cold Storage"
+  });
